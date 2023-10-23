@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: orakib <orakib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 10:47:33 by orakib            #+#    #+#             */
-/*   Updated: 2023/10/23 13:19:35 by orakib           ###   ########.fr       */
+/*   Created: 2023/10/23 15:18:39 by orakib            #+#    #+#             */
+/*   Updated: 2023/10/23 16:53:56 by orakib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#ifndef RPN_HPP
 
-int	main(int ac, char **av) {
-	if (ac == 2) {
-		std::string	arg = av[1];
-		BitcoinExchange::retrieveData();
-		BitcoinExchange::makeExchanges(arg);
-	}
-}
+#define RPN_HPP
+
+#include <iostream>
+#include <string>
+#include <stack>
+#include <algorithm>
+
+class	RPN {
+	private:
+		static std::string			input;
+		static std::stack<double>	s;
+		RPN();
+		RPN(const RPN &obj);
+		RPN	&operator=(const RPN &obj);
+		~RPN();
+	public:
+		static int	parseInput(std::string &arg);
+		static int	calculate();
+};
+
+#endif
