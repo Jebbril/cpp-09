@@ -6,7 +6,7 @@
 #    By: orakib <orakib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 10:46:17 by orakib            #+#    #+#              #
-#    Updated: 2023/10/23 18:09:08 by orakib           ###   ########.fr        #
+#    Updated: 2023/10/26 16:03:20 by orakib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADER = PmergeMe.hpp
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 OBJ = $(SRC:.cpp=.o)
 
